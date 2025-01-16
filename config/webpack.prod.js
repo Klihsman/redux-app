@@ -33,8 +33,7 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
         include: /node_modules/,
-      },
-      // ...existing rules...
+      }
     ],
   },
   plugins: [
