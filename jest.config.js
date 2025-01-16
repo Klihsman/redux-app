@@ -1,0 +1,9 @@
+module.exports = {
+  // ...existing configuration...
+  moduleNameMapper: {
+    '^react-router-dom$': '<rootDir>/node_modules/react-router-dom',
+    '^src/(.*)$': '<rootDir>/src/$1', // Ensure paths are set for src alias
+    // ...other aliases...
+  },
+  // ...existing configuration...
+};

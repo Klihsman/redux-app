@@ -1,32 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { v4 as uuidv4 } from 'uuid'; // Import UUID
+import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import { AppDispatch, RootState } from '../../redux/store';
 import Task from '../../types/task';
 import { addTask } from '../../redux/taskReducer';
-import './TaskForm.css'; // Import CSS
+import './TaskForm.css';
 
-// Tipagem do Form
-interface TaskFormProps {
-  // Remover onClose
-}
+interface TaskFormProps {}
 
 const TaskForm: React.FC<TaskFormProps> = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [status, setStatus] = useState<string>('Pending');
   const [dueDate, setDueDate] = useState<string>(new Date().toISOString());
   const tasks = useSelector((state: RootState) => state.task.tasks);
 
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Criar um novo objeto de tarefa
     const newTask: Task = {
-      id: uuidv4(), // Gerar um ID único
+      id: uuidv4(),
       title,
       description,
       dueDate,
@@ -42,7 +37,7 @@ const TaskForm: React.FC<TaskFormProps> = () => {
   };
 
   const handleBack = () => {
-    navigate('/dashboard'); // Navigate back to the dashboard
+    navigate('/dashboard');
   };
 
   return (
@@ -90,9 +85,13 @@ const TaskForm: React.FC<TaskFormProps> = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
-      <button onClick={handleBack} className="back-button">Voltar</button> {/* Add back button */}
+      <button onClick={handleBack} className="back-button">
+        Voltar
+      </button>{' '}
     </div>
   );
 };

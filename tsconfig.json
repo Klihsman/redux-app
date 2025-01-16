@@ -17,8 +17,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false, // Change to false to emit output
-    "jsx": "react-jsx"
+    "noEmit": false,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "react-router-dom": ["node_modules/react-router-dom"]
+    }
   },
   "include": [
     "src"

@@ -28,6 +28,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="dashboard">
+      <h1>Dashboard</h1>
       <h1>Gerenciador de Tarefas</h1>
       <button className="add-task-button" onClick={handleAddTask}>Adicionar Tarefa</button>
       <div className="task-list">

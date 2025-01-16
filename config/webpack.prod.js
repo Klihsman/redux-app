@@ -7,14 +7,14 @@ module.exports = {
   mode: 'production',
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '../build'), // Ensure correct path
+    path: path.resolve(__dirname, '../build'),
     filename: 'static/js/[name].[contenthash:8].js',
     publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      'react-router-dom': path.resolve(__dirname, '../node_modules/react-router-dom'), // Ensure correct path
+      'react-router-dom': path.resolve(__dirname, '../node_modules/react-router-dom'),
     },
   },
   module: {
